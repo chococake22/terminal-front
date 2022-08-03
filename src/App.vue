@@ -1,10 +1,21 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div id="app">
+    <up-header></up-header>
+    <router-view/>
+  </div>
 </template>
+
+<script>
+
+import UpHeader from './views/UpHeader.vue'
+
+export default {
+  name: 'app',
+  components: {
+    UpHeader: UpHeader
+  }
+}
+</script>
 
 <style>
 #app {

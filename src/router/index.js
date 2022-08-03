@@ -1,5 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '@/views/HomeView.vue'
+import UserLogin from '@/components/user/UserLogin.vue'
+import TimeList from '@/components/time/TimeList.vue'
+import BoardList from '@/components/board/BoardList.vue'
+import TerminalLocation from '@/components/location/TerminalLocation.vue'
+import UserMypage from '@/components/user/UserMypage.vue'
+import UserSignup from '@/components/user/UserSignup.vue'
+import UserUpdate from '@/components/user/UserUpdate.vue'
 
 const routes = [
   {
@@ -8,12 +15,39 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/login',
+    name: 'login',
+    component: UserLogin
+  },
+  {
+    path: '/bustime',
+    name: 'bustime',
+    component: TimeList
+  },
+  {
+    path: '/board',
+    name: 'board',
+    component: BoardList
+  },
+  {
+    path: '/location',
+    name: 'location',
+    component: TerminalLocation
+  },
+  {
+    path: '/mypage',
+    name: 'mypage',
+    component: UserMypage
+  },
+  {
+    path: '/signup',
+    name: 'signup',
+    component: UserSignup
+  },
+  {
+    path: '/update',
+    name: 'update',
+    component: UserUpdate
   }
 ]
 
