@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
-    home
+    안녕하세요! 장호원시외버스터미널입니다.
   </div>
 </template>
 

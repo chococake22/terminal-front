@@ -3,6 +3,7 @@ import HomeView from '@/views/HomeView.vue'
 import UserLogin from '@/components/user/UserLogin.vue'
 import TimeList from '@/components/time/TimeList.vue'
 import BoardList from '@/components/board/BoardList.vue'
+import BoardSave from '@/components/board/BoardSave.vue'
 import TerminalLocation from '@/components/location/TerminalLocation.vue'
 import UserMypage from '@/components/user/UserMypage.vue'
 import UserSignup from '@/components/user/UserSignup.vue'
@@ -45,9 +46,14 @@ const routes = [
     component: UserSignup
   },
   {
-    path: '/update',
-    name: 'update',
+    path: '/userupdate',
+    name: 'userupdate',
     component: UserUpdate
+  },
+  {
+    path: '/boardsave',
+    name: 'boardsave',
+    component: BoardSave
   }
 ]
 

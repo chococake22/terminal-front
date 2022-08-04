@@ -4,7 +4,7 @@
     <p>이름 : {{ userInfo.username }}</p>
     <p>이메일 : {{ userInfo.email }}</p>
     <p>전화번호 : {{ userInfo.phone }}</p>
-    <b-button class="mx-2" variant="primary" to="/update">회원정보 변경</b-button>
+    <b-button class="mx-2" variant="primary" to="/userupdate">회원정보 변경</b-button>
   </div>
 </template>
 
