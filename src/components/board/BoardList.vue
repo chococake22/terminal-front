@@ -19,6 +19,16 @@
         </tr>
       </tbody>
     </table>
+    <b-pagination
+        v-model="currentPage"
+        :total-rows="rows"
+        :per-page="perPage"
+        first-text="First"
+        prev-text="Prev"
+        next-text="Next"
+        last-text="Last"
+        align="center"
+      ></b-pagination>
   </div>
 </template>
 
