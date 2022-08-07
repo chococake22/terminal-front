@@ -1,9 +1,14 @@
 <template>
   <div>
-    <input type="password"  v-model="password" placeholder="비밀번호">
-    <input type="password" v-model="chkPwd" placeholder="비밀번호 확인">
-    <input type="text" v-model="email" placeholder="이메일">
-    <input type="text" v-model="phone" placeholder="전화번호">
+    <p>{{ userInfo.userNo }}</p>
+    <p>{{ userInfo.password }}</p>
+    <p>{{ userInfo.username }}</p>
+    <p>{{ userInfo.email }}</p>
+    <p>{{ userInfo.phone }}</p>
+    <input type="password"  v-model="password" placeholder="비밀번호"> <br>
+    <input type="password" v-model="chkPwd" placeholder="비밀번호 확인"> <br>
+    <input type="text" v-model="email" placeholder="이메일"> <br>
+    <input type="text" v-model="phone" placeholder="전화번호"> <br>
     <b-button class="mx-2" variant="primary" v-on:click="update({password, chkPwd, email, phone})">회원정보 변경</b-button>
   </div>
 </template>

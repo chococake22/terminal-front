@@ -1,9 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import UserLogin from '@/components/user/UserLogin.vue'
-import TimeList from '@/components/time/TimeList.vue'
+import BusTimeList from '@/components/time/BusTimeList.vue'
 import BoardList from '@/components/board/BoardList.vue'
 import BoardSave from '@/components/board/BoardSave.vue'
+import BoardDetail from '@/components/board/BoardDetail.vue'
+import BoardUpdate from '@/components/board/BoardUpdate.vue'
 import TerminalLocation from '@/components/location/TerminalLocation.vue'
 import UserMypage from '@/components/user/UserMypage.vue'
 import UserSignup from '@/components/user/UserSignup.vue'
@@ -16,18 +18,18 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/login',
-    name: 'login',
+    path: '/user/login',
+    name: 'UserLogin',
     component: UserLogin
   },
   {
-    path: '/bustime',
-    name: 'bustime',
-    component: TimeList
+    path: '/bustime/list',
+    name: 'bustime/list',
+    component: BusTimeList
   },
   {
-    path: '/board',
-    name: 'board',
+    path: '/board/list',
+    name: 'BoardList',
     component: BoardList
   },
   {
@@ -36,24 +38,34 @@ const routes = [
     component: TerminalLocation
   },
   {
-    path: '/mypage',
-    name: 'mypage',
+    path: '/user/mypage',
+    name: 'UserMypage',
     component: UserMypage
   },
   {
-    path: '/signup',
-    name: 'signup',
+    path: '/user/signup',
+    name: 'UserSignup',
     component: UserSignup
   },
   {
-    path: '/userupdate',
-    name: 'userupdate',
+    path: '/user/update',
+    name: 'UserUpdate',
     component: UserUpdate
   },
   {
-    path: '/boardsave',
-    name: 'boardsave',
+    path: '/board/save',
+    name: 'BoardSave',
     component: BoardSave
+  },
+  {
+    path: '/board/detail',
+    name: 'BoardDetail',
+    component: BoardDetail
+  },
+  {
+    path: '/board/update',
+    name: 'BoardUpdate',
+    component: BoardUpdate
   }
 ]
 

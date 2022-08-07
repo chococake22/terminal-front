@@ -53,7 +53,7 @@ export default {
         .then(res => {
           console.log(res)
           alert('글 작성이 완료되었습니다.')
-          this.$router.push('/board')
+          this.$router.push('/board/list')
         })
         .catch(() => {
           alert('오류')

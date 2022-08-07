@@ -44,9 +44,11 @@ export default createStore({
         .then(res => {
           const token = res.data.data.accessToken
           const userNo = res.data.data.userNo
+          const userId = res.data.data.userId
           console.log(res)
           localStorage.setItem('accessToken', token)
           localStorage.setItem('userNo', userNo)
+          localStorage.setItem('userId', userId)
           dispatch('getMemberInfo')
         })
         .catch(err => {
