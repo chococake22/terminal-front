@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import UserLogin from '@/components/user/UserLogin.vue'
 import BusTimeList from '@/components/time/BusTimeList.vue'
+import BusTimeSave from '@/components/time/BusTimeSave.vue'
 import BoardList from '@/components/board/BoardList.vue'
 import BoardSave from '@/components/board/BoardSave.vue'
 import BoardDetail from '@/components/board/BoardDetail.vue'
@@ -24,8 +25,13 @@ const routes = [
   },
   {
     path: '/bustime/list',
-    name: 'bustime/list',
+    name: 'BusTimeList',
     component: BusTimeList
+  },
+  {
+    path: '/bustime/save',
+    name: 'BusTimeSave',
+    component: BusTimeSave
   },
   {
     path: '/board/list',

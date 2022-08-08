@@ -125,7 +125,7 @@ export default {
         let endDate = this.date[1]
         startDate = dayjs(startDate).format('YYYY-MM-DD')
         endDate = dayjs(endDate).format('YYYY-MM-DD')
-        return axios.get(url + '/api/v1/board/search?startDate=' + startDate + '&endDate=' + endDate + '&page=' + currentPage + '&keyword=' + keyword + '&searchType=' + searchType + '&boardType=' + boardType, config)
+        return axios.get(url + '/api/v1/board/search?startDate=' + startDate + '&endDate=' + endDate + '&page=' + currentPage + '&size=' + this.size + '&keyword=' + keyword + '&searchType=' + searchType + '&boardType=' + boardType, config)
           .then(res => {
             const _app = this
             console.log(res)
