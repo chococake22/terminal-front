@@ -10,7 +10,7 @@
 
 ### 사용기술
 
- - Vue 3.0
+ - Vue 3.0(yarn)
  - Javascript
  - BootstrapVue 3
  - Visual Studio Code
