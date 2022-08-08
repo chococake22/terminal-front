@@ -4,7 +4,7 @@
 
 ### 목적
 
- - Spring boot를 활용하여 만든 REST API와 프론트의 axios를 이용하여 프로젝트를 진행한다.
+ - Spring boot를 활용하여 만든 REST API(https://github.com/chococake22/terminal-api.git)와 프론트의 axios를 이용하여 프로젝트를 진행한다.
  - Vue.js를 활용하여 간단한 디자인의 레이아웃을 구축하고 UI/UX에 대한 이해를 한다.
  - 프론트엔드 작업을 통해 실제 프론트 단에서 필요한 데이터를 이해하고 http 통신 메커니즘을 공부한다. 
 
