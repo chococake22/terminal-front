@@ -1,15 +1,19 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
 import router from '@/router'
+import createPersistedState from 'vuex-persistedstate'
 
 const url = 'http://localhost:8080'
 
 export default createStore({
+  // 로그아웃 후에도 state 상태 유지
+  plugins: [createPersistedState()],
   state: {
     userInfo: [],
     loggedIn: null,
     isLogin: false,
-    isLoginError: false
+    isLoginError: false,
+    role: null
   },
   getters: {
     getUserPwd: function (state) {
@@ -22,6 +26,7 @@ export default createStore({
       state.isLoginError = false
       state.userInfo = payload
       state.loggedIn = localStorage.getItem('userNo')
+      state.role = state.userInfo.role
     },
     loginError (state) {
       state.isLogin = false
@@ -31,9 +36,12 @@ export default createStore({
       state.isLogin = false
       state.isLoginError = false
       state.userInfo = null
+      state.loggedIn = null
+      state.role = null
       localStorage.removeItem('userNo')
       localStorage.removeItem('userId')
       localStorage.removeItem('accessToken')
+      localStorage.removeItem('role')
       location.reload()
     }
   },
@@ -45,7 +53,9 @@ export default createStore({
           const token = res.data.data.accessToken
           const userNo = res.data.data.userNo
           const userId = res.data.data.userId
+          console.log('로그인')
           console.log(res)
+          // 토큰 정보를 로컬 스토리지에 저장
           localStorage.setItem('accessToken', token)
           localStorage.setItem('userNo', userNo)
           localStorage.setItem('userId', userId)
@@ -59,6 +69,7 @@ export default createStore({
     logout ({ commit }) {
       console.log('로그아웃')
       commit('logout')
+      router.push('/')
     },
     signup ({ commit }, signupObj) {
       axios
@@ -94,6 +105,7 @@ export default createStore({
         })
     },
     getMemberInfo ({ commit }) {
+      // 로컬 스토리지에 저장되어 있는 토큰을 불러오기
       const token = localStorage.getItem('accessToken')
       const userNo = localStorage.getItem('userNo')
       const config = {
@@ -110,8 +122,13 @@ export default createStore({
             userId: res.data.data.userId,
             username: res.data.data.username,
             email: res.data.data.email,
-            phone: res.data.data.phone
+            phone: res.data.data.phone,
+            role: res.data.data.role
           }
+          if (userInfo.role === 'ADMIN') {
+            localStorage.setItem('role', userInfo.role)
+          }
+          console.log('회원정보')
           console.log(userInfo)
           console.log(config)
           commit('loginSuccess', userInfo)

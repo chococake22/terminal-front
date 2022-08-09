@@ -19,17 +19,17 @@
               <li class="navbar-nav">
                 <div>
                   <b-button-toolbar justify aria-label="Toolbar with justify">
-                    <li class="nav-item mx-3" v-if="loggedIn === null">
+                    <li class="nav-item mx-3" v-if="isLogin === false">
                       <b-button variant="primary" to="/user/login">로그인</b-button>
                     </li>
-                    <li class="nav-item" v-if="loggedIn === null">
+                    <li class="nav-item" v-if="isLogin === false">
                       <b-button variant="primary" to="/user/signup">회원가입</b-button>
                     </li>
-                    <li class="nav-item mx-5" v-if="loggedIn !== null">
+                    <li class="nav-item mx-5" v-if="isLogin === true">
                       <span class="nav-link">{{ userInfo.username }} 님 환영합니다</span>
                     </li>
                     <li>
-                      <div v-if="loggedIn !== null">
+                      <div v-if="isLogin === true">
                         <b-button class="mx-2" variant="primary" to="/user/mypage">마이페이지</b-button>
                         <b-button variant="primary" v-on:click="logout()">로그아웃</b-button>
                       </div>
@@ -56,7 +56,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['loggedIn', 'userInfo'])
+    ...mapState(['loggedIn', 'userInfo', 'isLogin'])
   },
   methods: {
     ...mapActions(['logout'])

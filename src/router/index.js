@@ -46,6 +46,14 @@ const routes = [
   {
     path: '/user/mypage',
     name: 'UserMypage',
+    beforeEnter: (to, from, next) => {
+      const userNo = localStorage.getItem('userNo')
+      if (userNo === null) {
+        next('/')
+      } else {
+        next()
+      }
+    },
     component: UserMypage
   },
   {
@@ -56,6 +64,14 @@ const routes = [
   {
     path: '/user/update',
     name: 'UserUpdate',
+    beforeEnter: (to, from, next) => {
+      const userNo = localStorage.getItem('userNo')
+      if (userNo === null) {
+        next('/')
+      } else {
+        next()
+      }
+    },
     component: UserUpdate
   },
   {
